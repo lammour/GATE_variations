@@ -25,7 +25,7 @@ mkdir geant4.10.03.p01-install
 cd geant4.10.03.p01-build
 cmake -DCMAKE_INSTALL_PREFIX=~/Geant4/geant4.10.03.p01-install \
 ~/Geant4/geant4.10.03.p01 -DGEANT4_INSTALL_DATA=ON
-make
+make -j
 make install
 source ~/Geant4/geant4.10.03.p01-install/bin/geant4.sh
 echo 'source ~/Geant4/geant4.10.03.p01-install/bin/geant4.sh' >> ~/.bashrc
