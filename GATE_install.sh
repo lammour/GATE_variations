@@ -1,11 +1,16 @@
-#!/bin/bash
+#!/bin/bashs
 
 # Author: Luis Ammour
 # email: luis@ammour.net
 # https://github.com/lammour
 # https://mamot.fr/@la
 
-sudo apt-get install cmake cmake-curses-gui build-essential libqt4-opengl libqt4-opengl-dev qt4-qmake libqt4-dev libx11-dev libxmu-dev libxpm-dev libxft-dev wget git dpkg-dev g++ gcc binutils libxext-dev gfortran libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev -y
+sudo apt-get install cmake cmake-curses-gui build-essential libqt4-opengl \
+libqt4-opengl-dev qt4-qmake libqt4-dev libx11-dev libxmu-dev libxpm-dev \
+libxft-dev wget git dpkg-dev g++ gcc binutils libxext-dev gfortran libssl-dev \
+libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev \
+libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev \
+libldap2-dev python-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev -y
 
 mkdir ~/Geant4
 mkdir ~/ROOT
@@ -18,7 +23,8 @@ tar zxvf geant4.10.03.p01.tar.gz
 mkdir geant4.10.03.p01-build
 mkdir geant4.10.03.p01-install
 cd geant4.10.03.p01-build
-cmake -DCMAKE_INSTALL_PREFIX=~/Geant4/geant4.10.03.p01-install ~/Geant4/geant4.10.03.p01 -DGEANT4_INSTALL_DATA=ON
+cmake -DCMAKE_INSTALL_PREFIX=~/Geant4/geant4.10.03.p01-install \
+~/Geant4/geant4.10.03.p01 -DGEANT4_INSTALL_DATA=ON
 make
 make install
 source ~/Geant4/geant4.10.03.p01-install/bin/geant4.sh
