@@ -25,19 +25,21 @@ mkdir geant4.10.03.p01-install
 cd geant4.10.03.p01-build
 cmake -DCMAKE_INSTALL_PREFIX=~/Geant4/geant4.10.03.p01-install \
 ~/Geant4/geant4.10.03.p01 -DGEANT4_INSTALL_DATA=ON
-make -j
+make
+#make -j7
 make install
 source ~/Geant4/geant4.10.03.p01-install/bin/geant4.sh
 echo 'source ~/Geant4/geant4.10.03.p01-install/bin/geant4.sh' >> ~/.bashrc
 
 # ROOT
-cd /home/ROOT
+cd ~/ROOT
 wget https://root.cern.ch/download/root_v6.08.06.source.tar.gz
 tar zxvf root_v6.08.06.source.tar.gz
 mkdir root-6.08.06-build
 cd root-6.08.06-build
 cmake ../root-6.08.06/
-cmake --build . -- -j
+cmake --build .
+#cmake --build . -- -j7
 source ~/ROOT/root-6.08.06-build/bin/thisroot.sh
 echo 'source ~/ROOT/root-6.08.06-build/bin/thisroot.sh' >> ~/.bashrc
 
@@ -49,8 +51,8 @@ mkdir gate_v8.0-build
 mkdir gate_v8.0-install
 cd gate_v8.0-build
 cmake -DCMAKE_INSTALL_PREFIX=~/GATE/gate_v8.0-install ~/GATE/gate_v8.0
-make -j
+make
+#make -j7
 make install
-export PATH=$PATH:~/GATE/gate_v8.0-install/bin
 echo "export PATH=$PATH:~/GATE/gate_v8.0-install/bin" >> ~/.bashrc
-
+source ~/.bashrc
